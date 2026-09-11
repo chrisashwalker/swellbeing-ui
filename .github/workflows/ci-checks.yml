@@ -1,6 +1,6 @@
 name: CI checks
 
-on: 
+on:
   pull_request:
     branches:
       - main
@@ -9,7 +9,7 @@ on:
       - reopened
       - synchronize
       - ready_for_review
-   
+
 jobs:
   build_and_test:
     name: build_and_test
