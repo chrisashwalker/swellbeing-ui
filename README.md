@@ -12,6 +12,21 @@
 
 - There is a workflow to build and publish a Docker image when the main branch is updated. A two-stage build starts with a builder image, with build dependencies installed, but the final runtime image is leaner.
 
+## Implemented screens
+
+- `/` is the responsive welcome screen based on the supplied Swellbeing visual direction.
+- `/join` creates a user through the REST API and presents the generated UUID once for safekeeping.
+- `/login` treats that UUID as the user's single password.
+- `/water` loads and saves dated water entries through the REST API.
+
+The browser talks only to same-origin Next.js route handlers. The Flask API bearer token remains on
+the server, while the user's UUID is kept in an HTTP-only, same-site cookie. Copy `.env.example` to
+`.env.local` and set `SWELLBEING_API_TOKEN` to a token also present in the API project's
+`ACCESS_TOKENS` setting. `SWELLBEING_API_URL` defaults to `http://127.0.0.1:8000`.
+
+The API currently has no endpoint for deleting a water entry, so the interface supports retrieval
+and creation only.
+
 ## Getting Started
 
 First, run the development server:
@@ -30,7 +45,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The design uses local system fonts, so building the app does not depend on an external font service.
 
 ## Learn More
 
