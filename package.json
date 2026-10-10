@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "next": "16.3.8",
+    "next": "16.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
@@ -23,7 +23,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.3.8",
+    "eslint-config-next": "16.4.0",
     "jest": "^30.5.1",
     "prettier": "^3.9.6",
     "tailwindcss": "^4",
