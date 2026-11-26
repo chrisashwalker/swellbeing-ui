@@ -1,5 +1,5 @@
 # Use node.js to install dependencies
-FROM node:24-alpine AS dependencies
+FROM node:26-alpine AS dependencies
 
 # Set working directory
 WORKDIR /app
@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/root/.npm \
     npm ci --no-audit --no-fund; 
  
 # Build stage for the Next.js application
-FROM node:24-alpine AS builder
+FROM node:26-alpine AS builder
 
 # Set working directory
 WORKDIR /app
@@ -30,7 +30,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build; 
 
 # Run Next.js application
-FROM node:24-alpine AS runner
+FROM node:26-alpine AS runner
 
 # Set working directory
 WORKDIR /app
